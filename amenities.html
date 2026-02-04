@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Azure Bay Luxury Resort</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://images.unsplash.com/photo-1571896349842-6e53ce41e887?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .amenity-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .amenity-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .amenity-img {
+            flex: 1;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .amenity-text {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+
+            .amenity-section,
+            .amenity-section:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="amenities.html" class="active">Amenities</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div>
+            <h1 class="hero-title animate-on-scroll">World Class Amenities</h1>
+            <p class="hero-subtitle animate-on-scroll">Relax, Rejuvenate, Recharge</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="amenity-section animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    alt="Spa" class="amenity-img" style="flex: 0.4; max-width: 400px;">
+                <div class="amenity-text">
+                    <h2 class="section-title">The Serenity Spa</h2>
+                    <p>Escape into a world of tranquility at The Serenity Spa. Our expert therapists offer a range of
+                        treatments inspired by ancient healing traditions and modern wellness techniques.</p>
+                    <ul style="margin-top: 20px; color: #666; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Deep
+                            Tissue Massage</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i>
+                            Aromatherapy</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Facial
+                            Treatments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-section animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    alt="Infinity Pool" class="amenity-img" style="flex: 0.4; max-width: 400px;">
+                <div class="amenity-text">
+                    <h2 class="section-title">Infinity Pools</h2>
+                    <p>Our stunning infinity pools blend seamlessly with the azure ocean horizon. Enjoy a refreshing
+                        swim or simply lounge by the poolside with a tropical cocktail.</p>
+                    <ul style="margin-top: 20px; color: #666; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i>
+                            Oceanfront Views</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i>
+                            Poolside Bar Service</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Private
+                            Cabanas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-section animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    alt="Gym" class="amenity-img" style="flex: 0.4; max-width: 400px;">
+                <div class="amenity-text">
+                    <h2 class="section-title">Fitness & Yoga</h2>
+                    <p>Maintain your fitness routine in our state-of-the-art gym or find your inner balance with sunrise
+                        yoga sessions on the beach.</p>
+                    <ul style="margin-top: 20px; color: #666; line-height: 2;">
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Modern
+                            Equipment</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i>
+                            Personal Trainers</li>
+                        <li><i class="fas fa-check" style="color: var(--color-accent); margin-right: 10px;"></i> Guided
+                            Yoga Classes</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
+                    <p>Experience the epitome of luxury and tranquility at Azure Bay. Your perfect escape awaits.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="rooms.html">Rooms & Suites</a>
+                    <a href="dining.html">Dining</a>
+                    <a href="booking.html">Book Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Paradise Road, Tropical Island</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers.</p>
+                    <form style="display: flex; gap: 10px; margin-top: 15px;">
+                        <input type="email" placeholder="Your Email" style="padding: 10px; border: none; width: 100%;">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

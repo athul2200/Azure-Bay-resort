@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Azure Bay Luxury Resort</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div>
+            <h1 class="hero-title animate-on-scroll">Our Story</h1>
+            <p class="hero-subtitle animate-on-scroll">A Legacy of Luxury</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                        alt="Resort Entrance" style="border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title">The Vision</h2>
+                    <p style="margin-bottom: 20px;">Founded in 2010, Azure Bay Luxury Resort was born from a vision to
+                        create a sanctuary where nature and luxury coexist in perfect harmony. Nestled on the pristine
+                        shores of a private tropical island, we define the art of relaxation.</p>
+                    <p>Our commitment to excellence is reflected in every detail, from our sustainable architecture to
+                        our personalized guest services. We invite you to step into a world where time stands still and
+                        memories are crafted to last a lifetime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--color-secondary);">
+        <div class="container text-center">
+            <h2 class="section-title">Awards & Recognitions</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="animate-on-scroll">
+                    <i class="fas fa-trophy"
+                        style="font-size: 3rem; color: var(--color-accent); margin-bottom: 15px;"></i>
+                    <h3>Top Luxury Hotel</h3>
+                    <p>World Travel Awards 2024</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <i class="fas fa-star"
+                        style="font-size: 3rem; color: var(--color-accent); margin-bottom: 15px;"></i>
+                    <h3>5-Star Certified</h3>
+                    <p>Global Hotel Association</p>
+                </div>
+                <div class="animate-on-scroll">
+                    <i class="fas fa-leaf"
+                        style="font-size: 3rem; color: var(--color-accent); margin-bottom: 15px;"></i>
+                    <h3>Eco-Friendly Resort</h3>
+                    <p>Green Globe Certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
+                    <p>Experience the epitome of luxury and tranquility at Azure Bay. Your perfect escape awaits.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="rooms.html">Rooms & Suites</a>
+                    <a href="dining.html">Dining</a>
+                    <a href="booking.html">Book Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Paradise Road, Tropical Island</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers.</p>
+                    <form style="display: flex; gap: 10px; margin-top: 15px;">
+                        <input type="email" placeholder="Your Email" style="padding: 10px; border: none; width: 100%;">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

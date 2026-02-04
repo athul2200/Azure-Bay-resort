@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Suites | Azure Bay Luxury Resort</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .room-card {
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .room-card {
+                flex-direction: row;
+            }
+
+            .room-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .room-image {
+                flex: 1;
+                min-height: 400px;
+            }
+
+            .room-details {
+                flex: 1;
+                padding: 50px;
+            }
+        }
+
+        .room-image {
+            background-size: cover;
+            background-position: center;
+            min-height: 250px;
+        }
+
+        .room-details {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            margin: 20px 0;
+        }
+
+        .amenities-list {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html" class="active">Rooms</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div>
+            <h1 class="hero-title animate-on-scroll">Accommodations</h1>
+            <p class="hero-subtitle animate-on-scroll">Stay in Style</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- Room 1 -->
+            <div class="room-card animate-on-scroll">
+                <div class="room-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                </div>
+                <div class="room-details">
+                    <h3>Deluxe Ocean View</h3>
+                    <p>Wake up to the sound of waves in our spacious Deluxe Ocean View rooms. Elegant decor meets modern
+                        comfort.</p>
+                    <div class="price">$350 <span style="font-size: 1rem; color: #777;">/ night</span></div>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-wifi"></i> Wifi</span>
+                        <span><i class="fas fa-tv"></i> TV</span>
+                        <span><i class="fas fa-coffee"></i> Breakfast</span>
+                    </div>
+                    <a href="booking.html" class="btn btn-primary">Book This Room</a>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-card animate-on-scroll">
+                <div class="room-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                </div>
+                <div class="room-details">
+                    <h3>Executive Suite</h3>
+                    <p>Experience extra luxury with a separate living area and a private balcony overlooking the lush
+                        gardens.</p>
+                    <div class="price">$550 <span style="font-size: 1rem; color: #777;">/ night</span></div>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-wifi"></i> Wifi</span>
+                        <span><i class="fas fa-hot-tub"></i> Tub</span>
+                        <span><i class="fas fa-glass-martini-alt"></i> Mini Bar</span>
+                    </div>
+                    <a href="booking.html" class="btn btn-primary">Book This Room</a>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-card animate-on-scroll">
+                <div class="room-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+                </div>
+                <div class="room-details">
+                    <h3>Private Beach Villa</h3>
+                    <p>The ultimate secluded getaway. Your own private pool, direct beach access, and personal butler
+                        service.</p>
+                    <div class="price">$1,200 <span style="font-size: 1rem; color: #777;">/ night</span></div>
+                    <div class="amenities-list">
+                        <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                        <span><i class="fas fa-user-tie"></i> Butler</span>
+                        <span><i class="fas fa-spa"></i> Jacuzzi</span>
+                    </div>
+                    <a href="booking.html" class="btn btn-primary">Book This Room</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">Azure <span>Bay</span></a>
+                    <p>Experience the epitome of luxury and tranquility at Azure Bay. Your perfect escape awaits.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="rooms.html">Rooms & Suites</a>
+                    <a href="dining.html">Dining</a>
+                    <a href="booking.html">Book Now</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Paradise Road, Tropical Island</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers.</p>
+                    <form style="display: flex; gap: 10px; margin-top: 15px;">
+                        <input type="email" placeholder="Your Email" style="padding: 10px; border: none; width: 100%;">
+                        <button type="submit" class="btn btn-primary" style="padding: 10px 15px;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
