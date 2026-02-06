@@ -10,8 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon"
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
         8AAAD/4Vn/n2eb5p3onYBv16P/0UL/kFz/lF//51uPUTP/pGpnQCn/1Ef0yD8aFQf/mWIfGwvy1VRwcHCAcS3/
         6Fzo6Oif7KHSi3T19fVVflaNfDFFPRgdHR3SuUksJxBZWVlcPTPvooTozVEkJCTFxcW5ubnc3NyWlpaZhzWLi4
         tYWFiwsLATExPBqkOxnD43NzfT09NjY2NMTEyfn59USh19fX1BQUGAaSEvLy+mpqYqKiqijzmo6ar/9c3/4E3Z
@@ -244,6 +243,17 @@
                     method="POST" target="hidden_iframe">
                     <div class="form-row">
                         <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" name="entry.142917070" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" name="entry.2018778750" placeholder="Your Email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
                             <label>Check-in Date</label>
                             <input type="date" id="checkin" name="entry.872525354" required>
                         </div>
@@ -269,6 +279,9 @@
                                 <option value="0">No Children</option>
                                 <option value="1">1 Child</option>
                                 <option value="2">2 Children</option>
+                                <option value="3">3 Children</option>
+                                <option value="4">4 Children</option>
+                                <option value="5">5 Children</option>
                             </select>
                         </div>
                     </div>
@@ -419,15 +432,7 @@
                     <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
                     <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe for exclusive offers.</p>
-                    <form style="display: flex; gap: 10px; margin-top: 15px;">
-                        <input type="email" placeholder="Your Email" style="padding: 10px; border: none; width: 100%;">
-                        <button type="submit" class="btn btn-primary" style="padding: 10px 15px;"><i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+
             </div>
             <div class="copyright">
                 <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
@@ -502,11 +507,15 @@
 
         bookingForm.addEventListener('submit', () => {
             submitted = true;
+            // Show modal immediately with a slight delay for better UX
+            setTimeout(() => {
+                successModal.style.display = 'flex';
+            }, 500);
         });
 
         document.getElementById('hidden_iframe').onload = function () {
             if (submitted) {
-                successModal.style.display = 'flex';
+                // Form reset logic can happen in background
                 bookingForm.reset();
                 calculateTotal(); // Reset totals
                 // Reset payment method details visibility

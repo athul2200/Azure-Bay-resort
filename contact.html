@@ -10,8 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon"
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
         8AAAD/4Vn/n2eb5p3onYBv16P/0UL/kFz/lF//51uPUTP/pGpnQCn/1Ef0yD8aFQf/mWIfGwvy1VRwcHCAcS3/
         6Fzo6Oif7KHSi3T19fVVflaNfDFFPRgdHR3SuUksJxBZWVlcPTPvooTozVEkJCTFxcW5ubnc3NyWlpaZhzWLi4
         tYWFiwsLATExPBqkOxnD43NzfT09NjY2NMTEyfn59USh19fX1BQUGAaSEvLy+mpqYqKiqijzmo6ar/9c3/4E3Z
@@ -137,6 +136,60 @@
             border-radius: 4px;
             font-family: var(--font-body);
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
     </style>
 </head>
 
@@ -171,18 +224,22 @@
                 <!-- Contact Form -->
                 <div>
                     <h2 class="section-title">Send Us a Message</h2>
-                    <form>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    <form
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSciqugHnDfMQpeEHJnP7dhHGwvhFeWbMFxyDl7HgDJURTqpxA/formResponse"
+                        method="POST" target="hidden_iframe">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="entry.1948752762" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="entry.1299042645" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea rows="5" placeholder="How can we help?" required></textarea>
+                            <textarea name="entry.808258704" rows="5" placeholder="How can we help?"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -226,6 +283,20 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <i class="fas fa-check-circle"
+                style="font-size: 3rem; color: var(--color-primary); margin-bottom: 20px;"></i>
+            <h3 style="font-family: var(--font-heading); color: var(--color-primary);">Message Sent!</h3>
+            <p style="margin: 15px 0; color: #666;">Thank you for contacting us. We will get back to you shortly.</p>
+            <button class="btn btn-primary" id="closeModalBtn" style="width: 100%;">Close</button>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -251,15 +322,7 @@
                     <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
                     <p><i class="fas fa-envelope"></i> info@azurebayresort.com</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe for exclusive offers.</p>
-                    <form style="display: flex; gap: 10px; margin-top: 15px;">
-                        <input type="email" placeholder="Your Email" style="padding: 10px; border: none; width: 100%;">
-                        <button type="submit" class="btn btn-primary" style="padding: 10px 15px;"><i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+
             </div>
             <div class="copyright">
                 <p>&copy; 2026 Azure Bay Luxury Resort. All Rights Reserved.</p>
@@ -267,6 +330,46 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        // Contact Form Modal Logic
+        const contactForm = document.querySelector('form[action*="docs.google.com"]');
+        const successModal = document.getElementById('successModal');
+        const closeBtn = document.querySelector('.close-btn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const hiddenIframe = document.getElementById('hidden_iframe');
+        let submitted = false;
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', () => {
+                submitted = true;
+                // Show modal immediately with a slight delay for better UX
+                setTimeout(() => {
+                    successModal.style.display = 'flex';
+                }, 500);
+            });
+        }
+
+        if (hiddenIframe) {
+            hiddenIframe.onload = function () {
+                if (submitted) {
+                    contactForm.reset();
+                    submitted = false;
+                }
+            };
+        }
+
+        function closeModal() {
+            successModal.style.display = 'none';
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
