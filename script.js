@@ -61,4 +61,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
+    
 });
+
+fetch("http://127.0.0.1:8000/api/book/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: name,
+    email: email,
+    phone: phone,
+    room_type: room,
+    check_in: checkIn,
+    check_out: checkOut,
+    guests: guests
+  })
+})
+.then(res => res.json())
+.then(data => alert("Booking Successful ✅"));

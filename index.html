@@ -224,7 +224,28 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch("http://127.0.0.1:8000/api/book/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            room: document.getElementById("room").value,
+            check_in: document.getElementById("checkin").value,
+            check_out: document.getElementById("checkout").value,
+            guests: document.getElementById("guests").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert("Booking Successful!"));
+});
+    </script>
 </body>
 
 </html>
