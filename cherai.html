@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,31 +10,31 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 
 <body>
     <header id="header" class="sticky">
         <div class="container navbar">
-            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <a href="/" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li class="dropdown">
-                    <a href="resorts.html" class="active">RESORTS <i class="fas fa-chevron-down"
+                    <a href="/resorts.html" class="active">RESORTS <i class="fas fa-chevron-down"
                             style="font-size: 0.7rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="munnar.html">Azure Birds Valley, Munnar</a></li>
-                        <li><a href="wayanad.html">Hotel Azure, Wayanad</a></li>
-                        <li><a href="cherai.html">Azure beach resort, Cherai</a></li>
-                        <li><a href="kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
 
                     </ul>
                 </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary"
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary"
                         style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
@@ -142,7 +143,8 @@
                 <li><a href="#facilities"><i class="fas fa-concierge-bell"></i> Facilities</a></li>
             </ul>
             <div class="sub-nav-action">
-                <a href="cherai-activities.html" class="nav-btn-activities"><i class="fas fa-skiing"></i> Activities</a>
+                <a href="/cherai-activities.html" class="nav-btn-activities"><i class="fas fa-skiing"></i>
+                    Activities</a>
             </div>
         </div>
     </nav>
@@ -159,9 +161,11 @@
                     <img src="	https://indriyaresorts.com/images/resorts/indriya-beach-resort/accom-periyar-01.jpg"
                         alt="Oceanfront Pool Villa" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 25px;">
-                        <h4>Oceanfront Pool Villa</h4>
-                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Private
-                            villas with direct beach access and personal plunge pools for ultimate luxury.</p>
+                        <h4>Periyar
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Stylishly
+                            furnished individual cottages with wooden roofs, private sit out areas in the front, facing
+                            the garden fringed pond and at the rear, looking out at the lagoon.</p>
                     </div>
                 </div>
                 <!-- Room 2 -->
@@ -170,9 +174,13 @@
                     <img src="https://indriyaresorts.com/images/resorts/indriya-beach-resort/accom-kettuvallom-01.jpg"
                         alt="Lagoon View Suite" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 25px;">
-                        <h4>Lagoon View Suite</h4>
-                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Tranquil
-                            rooms facing the backwater lagoon, perfect for witnessing magical sunsets.</p>
+                        <h4>Kettuvallom (House Boat)</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Should you
+                            desire to go out and explore the fascinating rhythms of life along the palm fringed
+                            backwater canals, our houseboat awaits, embark on a day or overnight luxury cruise. Designed
+                            as a perfect replica of a traditional barge called a 'Kettuvallom', once used as barges to
+                            ferry grain and other produce, the interiors are sumptuous and fitted out with the state of
+                            the art in amenities.</p>
                     </div>
                 </div>
                 <!-- Room 3 -->
@@ -181,9 +189,12 @@
                     <img src="https://indriyaresorts.com/images/resorts/indriya-beach-resort/accom-marina-01.jpg"
                         alt="Heritage Garden Cottage" style="width: 100%; height: 250px; object-fit: cover;">
                     <div style="padding: 25px;">
-                        <h4>Heritage Garden Cottage</h4>
-                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Classic
-                            Kerala-style architecture set amidst tropical palms and lush greenery.</p>
+                        <h4>Marina (CONTEMPORARY ROOMS: SEA FACING)</h4>
+                        <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 15px;">Sea facing
+                            executive rooms with wooden floors, stylish contemporary decor and the state of the art in
+                            amenities. Ideal for guests seeking a balance between the demands of work and relaxation.
+                            Enjoy the breathtaking views of the ocean and spectacular sunsets through the large glass
+                            windows.</p>
                     </div>
                 </div>
             </div>
@@ -269,37 +280,37 @@
                 <div class="footer-col">
                     <h4>Azure Birds Valley</h4>
                     <div class="footer-resort-links">
-                        <a href="munnar.html#accommodation">Accommodation</a>
-                        <a href="munnar.html#dining">Dining</a>
-                        <a href="munnar.html#banquets">Banquets</a>
-                        <a href="munnar.html#facilities">Facilities</a>
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Hotel Azure</h4>
                     <div class="footer-resort-links">
-                        <a href="wayanad.html#accommodation">Accommodation</a>
-                        <a href="wayanad.html#dining">Dining</a>
-                        <a href="wayanad.html#banquets">Banquets</a>
-                        <a href="wayanad.html#facilities">Facilities</a>
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure beach resort</h4>
                     <div class="footer-resort-links">
-                        <a href="cherai.html#accommodation">Accommodation</a>
-                        <a href="cherai.html#dining">Dining</a>
-                        <a href="cherai.html#banquets">Banquets</a>
-                        <a href="cherai.html#facilities">Facilities</a>
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure Bay Kuzhupilly</h4>
                     <div class="footer-resort-links">
-                        <a href="kuzhupilly.html#accommodation">Accommodation</a>
-                        <a href="kuzhupilly.html#dining">Dining</a>
-                        <a href="kuzhupilly.html#banquets">Banquets</a>
-                        <a href="kuzhupilly.html#facilities">Facilities</a>
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -320,7 +331,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>

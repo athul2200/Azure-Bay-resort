@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
         8AAAD/4Vn/n2eb5p3onYBv16P/0UL/kFz/lF//51uPUTP/pGpnQCn/1Ef0yD8aFQf/mWIfGwvy1VRwcHCAcS3/
         6Fzo6Oif7KHSi3T19fVVflaNfDFFPRgdHR3SuUksJxBZWVlcPTPvooTozVEkJCTFxcW5ubnc3NyWlpaZhzWLi4
@@ -91,23 +92,23 @@
     <!-- Header -->
     <header id="header">
         <div class="container navbar">
-            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <a href="/" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li class="dropdown">
-                    <a href="resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <a href="/resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="munnar.html">Azure Birds Valley, Munnar</a></li>
-                        <li><a href="wayanad.html">Hotel Azure, Wayanad</a></li>
-                        <li><a href="cherai.html">Azure beach resort, Cherai</a></li>
-                        <li><a href="kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
                     </ul>
                 </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary"
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary"
                         style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
@@ -179,7 +180,7 @@
                         </h3>
                         <p style="color: #ddd; margin-bottom: 20px;">A tranquil escape amidst the hills and bird
                             sanctuaries of Munnar.</p>
-                        <a href="munnar.html" class="btn" style="color: white;">View Resort</a>
+                        <a href="/munnar.html" class="btn" style="color: white;">View Resort</a>
                     </div>
                 </div>
                 <!-- Resort 1 -->
@@ -192,7 +193,7 @@
                         <h3 style="color: white; font-size: 1.8rem; margin-bottom: 10px;">Hotel Azure, Wayanad</h3>
                         <p style="color: #ddd; margin-bottom: 20px;">Four-star hospitality nestled in the lush greenery
                             of Palakkad.</p>
-                        <a href="wayanad.html" class="btn" style="color: white;">View Resort</a>
+                        <a href="/wayanad.html" class="btn" style="color: white;">View Resort</a>
                     </div>
                 </div>
                 <!-- Resort 2 -->
@@ -206,7 +207,7 @@
                         </h3>
                         <p style="color: #ddd; margin-bottom: 20px;">A magical blend of the Arabian Sea and the serene
                             backwaters.</p>
-                        <a href="cherai.html" class="btn" style="color: white;">View Resort</a>
+                        <a href="/cherai.html" class="btn" style="color: white;">View Resort</a>
                     </div>
                 </div>
                 <!-- Resort 3 -->
@@ -220,7 +221,7 @@
                         </h3>
                         <p style="color: #ddd; margin-bottom: 20px;">A discreet little hideaway for unforgettable beach
                             holidays.</p>
-                        <a href="kuzhupilly.html" class="btn" style="color: white;">View Resort</a>
+                        <a href="/kuzhupilly.html" class="btn" style="color: white;">View Resort</a>
                     </div>
                 </div>
             </div>
@@ -257,37 +258,37 @@
                 <div class="footer-col">
                     <h4>Azure Birds Valley</h4>
                     <div class="footer-resort-links">
-                        <a href="munnar.html#accommodation">Accommodation</a>
-                        <a href="munnar.html#dining">Dining</a>
-                        <a href="munnar.html#banquets">Banquets</a>
-                        <a href="munnar.html#facilities">Facilities</a>
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Hotel Azure</h4>
                     <div class="footer-resort-links">
-                        <a href="wayanad.html#accommodation">Accommodation</a>
-                        <a href="wayanad.html#dining">Dining</a>
-                        <a href="wayanad.html#banquets">Banquets</a>
-                        <a href="wayanad.html#facilities">Facilities</a>
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure beach resort</h4>
                     <div class="footer-resort-links">
-                        <a href="cherai.html#accommodation">Accommodation</a>
-                        <a href="cherai.html#dining">Dining</a>
-                        <a href="cherai.html#banquets">Banquets</a>
-                        <a href="cherai.html#facilities">Facilities</a>
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure Bay Kuzhupilly</h4>
                     <div class="footer-resort-links">
-                        <a href="kuzhupilly.html#accommodation">Accommodation</a>
-                        <a href="kuzhupilly.html#dining">Dining</a>
-                        <a href="kuzhupilly.html#banquets">Banquets</a>
-                        <a href="kuzhupilly.html#facilities">Facilities</a>
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -307,27 +308,27 @@
         </div>
     </footer>
 
-    <script src="script.js">
-        document.getElementById("bookingForm").addEventListener("submit", function (e) {
-            e.preventDefault();
+    <script src="{% static 'script.js' %}"></script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-            fetch("http://127.0.0.1:8000/api/book/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    room: document.getElementById("room").value,
-                    check_in: document.getElementById("checkin").value,
-                    check_out: document.getElementById("checkout").value,
-                    guests: document.getElementById("guests").value
-                })
-            })
-                .then(res => res.json())
-                .then(data => alert("Booking Successful!"));
-        });
+    fetch("http://127.0.0.1:8000/api/book/", {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    room: document.getElementById("room").value,
+    check_in: document.getElementById("checkin").value,
+    check_out: document.getElementById("checkout").value,
+    guests: document.getElementById("guests").value
+    })
+    })
+    .then(res => res.json())
+    .then(data => alert("Booking Successful!"));
+    });
     </script>
 </body>
 

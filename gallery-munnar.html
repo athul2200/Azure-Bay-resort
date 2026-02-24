@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,29 +10,29 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 
 <body>
     <header id="header" class="sticky">
         <div class="container navbar">
-            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <a href="/" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li class="dropdown">
-                    <a href="resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <a href="/resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="munnar.html">Azure Birds Valley, Munnar</a></li>
-                        <li><a href="wayanad.html">Hotel Azure, Wayanad</a></li>
-                        <li><a href="cherai.html">Azure beach resort, Cherai</a></li>
-                        <li><a href="kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
                     </ul>
                 </li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary"
+                <li><a href="/gallery.html" class="active">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary"
                         style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
@@ -67,8 +68,8 @@
                         src="https://indriyaresorts.com/images/resorts/birds-valley/gall-view.jpg" alt="Munnar 6">
                 </div>
                 <div class="gallery-detail-item"><img
-                        src="https://indriyaresorts.com/images/resorts/birds-valley/gall-longview.jpg"
-                        alt="Munnar 7"></div>
+                        src="https://indriyaresorts.com/images/resorts/birds-valley/gall-longview.jpg" alt="Munnar 7">
+                </div>
                 <div class="gallery-detail-item"><img
                         src="https://indriyaresorts.com/images/resorts/birds-valley/img-78.jpg" alt="Munnar 8"></div>
                 <div class="gallery-detail-item"><img
@@ -176,23 +177,22 @@
                 <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
             </div>
         </div>
-    
+
         <!-- Lightbox Structure -->
-    <div class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
-            <img src="" alt="Lightbox Image" class="lightbox-img">
-            <div class="lightbox-nav">
-                <div class="lightbox-btn lightbox-prev"><i class="fas fa-chevron-left"></i></div>
-                <div class="lightbox-btn lightbox-next"><i class="fas fa-chevron-right"></i></div>
+        <div class="lightbox">
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img src="" alt="Lightbox Image" class="lightbox-img">
+                <div class="lightbox-nav">
+                    <div class="lightbox-btn lightbox-prev"><i class="fas fa-chevron-left"></i></div>
+                    <div class="lightbox-btn lightbox-next"><i class="fas fa-chevron-right"></i></div>
+                </div>
             </div>
         </div>
-    </div>
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>
-

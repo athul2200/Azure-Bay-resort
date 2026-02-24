@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities at Beach Resort & Spa Cherai | Azure Bay Resorts</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
@@ -109,23 +110,23 @@
     <!-- Header -->
     <header class="sticky">
         <div class="container navbar">
-            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <a href="/" class="logo">Azure <span>Bay</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                    <a href="resorts.html" class="active">RESORTS <i class="fas fa-chevron-down"
+                    <a href="/resorts.html" class="active">RESORTS <i class="fas fa-chevron-down"
                             style="font-size: 0.7rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="munnar.html">Azure Birds Valley, Munnar</a></li>
-                        <li><a href="wayanad.html">Hotel Azure, Wayanad</a></li>
-                        <li><a href="cherai.html">Azure beach resort, Cherai</a></li>
-                        <li><a href="kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
                     </ul>
                 </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary">Book Now</a></li>
             </ul>
         </div>
     </header>
@@ -142,7 +143,7 @@
     <!-- Back Navigation -->
     <nav class="back-nav">
         <div class="container">
-            <a href="cherai.html#activities" class="back-link">
+            <a href="/cherai.html#activities" class="back-link">
                 <i class="fas fa-arrow-left"></i> Back to Cherai Resort
             </a>
         </div>
@@ -260,37 +261,37 @@
                 <div class="footer-col">
                     <h4>Azure Birds Valley</h4>
                     <div class="footer-resort-links">
-                        <a href="munnar.html#accommodation">Accommodation</a>
-                        <a href="munnar.html#dining">Dining</a>
-                        <a href="munnar.html#banquets">Banquets</a>
-                        <a href="munnar.html#facilities">Facilities</a>
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Hotel Azure</h4>
                     <div class="footer-resort-links">
-                        <a href="wayanad.html#accommodation">Accommodation</a>
-                        <a href="wayanad.html#dining">Dining</a>
-                        <a href="wayanad.html#banquets">Banquets</a>
-                        <a href="wayanad.html#facilities">Facilities</a>
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure beach resort</h4>
                     <div class="footer-resort-links">
-                        <a href="cherai.html#accommodation">Accommodation</a>
-                        <a href="cherai.html#dining">Dining</a>
-                        <a href="cherai.html#banquets">Banquets</a>
-                        <a href="cherai.html#facilities">Facilities</a>
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure Bay Kuzhupilly</h4>
                     <div class="footer-resort-links">
-                        <a href="kuzhupilly.html#accommodation">Accommodation</a>
-                        <a href="kuzhupilly.html#dining">Dining</a>
-                        <a href="kuzhupilly.html#banquets">Banquets</a>
-                        <a href="kuzhupilly.html#facilities">Facilities</a>
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -310,7 +311,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>

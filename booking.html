@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 
     <!-- EmailJS script -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -99,23 +100,23 @@
 
     <header id="header" class="sticky">
         <div class="container navbar">
-            <a href="index.html" class="logo">Azure <span>Bay</span></a>
+            <a href="/" class="logo">Azure <span>Bay</span></a>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li class="dropdown">
-                    <a href="resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <a href="/resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="munnar.html">Azure Birds Valley, Munnar</a></li>
-                        <li><a href="wayanad.html">Hotel Azure, Wayanad</a></li>
-                        <li><a href="cherai.html">Azure beach resort, Cherai</a></li>
-                        <li><a href="kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
                     </ul>
                 </li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="booking.html" class="btn btn-primary"
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary"
                         style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
             </ul>
         </div>
@@ -133,7 +134,9 @@
                     </article>
                 </div>
 
-                <form id="bookingForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <form id="bookingForm" action="/reserve/" method="POST"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    {% csrf_token %}
                     <div style="grid-column: span 2;">
                         <label
                             style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Select
@@ -165,28 +168,28 @@
                     <div>
                         <label
                             style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Check-In</label>
-                        <input type="date" id="checkin" required
+                        <input type="date" id="checkin" name="check_in" required
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
                     <div>
                         <label
                             style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Check-Out</label>
-                        <input type="date" id="checkout" required
+                        <input type="date" id="checkout" name="check_out" required
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
                     <div>
                         <label
                             style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Adults</label>
-                        <input type="number" id="adults" min="1" value="0" required
+                        <input type="number" id="adults" name="adults" min="1" value="0" required
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
                     <div>
                         <label
                             style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-primary);">Children</label>
-                        <input type="number" id="children" min="0" value="0"
+                        <input type="number" id="children" name="children" min="0" value="0"
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
@@ -200,17 +203,17 @@
                     </div>
 
                     <div>
-                        <input type="text" id="name" placeholder="Your Name" required
+                        <input type="text" id="name" name="name" placeholder="Your Name" required
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
                     <div>
-                        <input type="tel" id="phone" placeholder="Mobile Number" required
+                        <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
                     <div style="grid-column: span 2; display: flex; gap: 10px;">
-                        <input type="email" id="email" placeholder="Email Address" required
+                        <input type="email" id="email" name="email" placeholder="Email Address" required
                             style="flex: 1; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body);">
                         <button type="button" id="sendOtpBtn"
                             style="padding: 12px 20px; border: 1px solid var(--color-accent); background: var(--color-accent); color: white; border-radius: 4px; font-family: var(--font-body); cursor: pointer; font-weight: 500; transition: var(--transition-smooth); white-space: nowrap;">Send
@@ -231,7 +234,7 @@
                     </div>
 
                     <div style="grid-column: span 2;">
-                        <textarea id="message" rows="4" placeholder="Special Requests"
+                        <textarea id="message" name="message" rows="4" placeholder="Special Requests"
                             style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body); resize: none;"></textarea>
                     </div>
 
@@ -251,37 +254,37 @@
                 <div class="footer-col">
                     <h4>Azure Birds Valley</h4>
                     <div class="footer-resort-links">
-                        <a href="munnar.html#accommodation">Accommodation</a>
-                        <a href="munnar.html#dining">Dining</a>
-                        <a href="munnar.html#banquets">Banquets</a>
-                        <a href="munnar.html#facilities">Facilities</a>
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Hotel Azure</h4>
                     <div class="footer-resort-links">
-                        <a href="wayanad.html#accommodation">Accommodation</a>
-                        <a href="wayanad.html#dining">Dining</a>
-                        <a href="wayanad.html#banquets">Banquets</a>
-                        <a href="wayanad.html#facilities">Facilities</a>
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure beach resort</h4>
                     <div class="footer-resort-links">
-                        <a href="cherai.html#accommodation">Accommodation</a>
-                        <a href="cherai.html#dining">Dining</a>
-                        <a href="cherai.html#banquets">Banquets</a>
-                        <a href="cherai.html#facilities">Facilities</a>
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Azure Bay Kuzhupilly</h4>
                     <div class="footer-resort-links">
-                        <a href="kuzhupilly.html#accommodation">Accommodation</a>
-                        <a href="kuzhupilly.html#dining">Dining</a>
-                        <a href="kuzhupilly.html#banquets">Banquets</a>
-                        <a href="kuzhupilly.html#facilities">Facilities</a>
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -302,7 +305,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
     <script>
         const resortRooms = {
             'munnar': [
@@ -315,9 +318,9 @@
                 { value: 'PREMIUM ROOM', label: 'PREMIUM ROOM', icon: 'fas fa-concierge-bell' },
             ],
             'cherai': [
-                { value: 'oceanfront-pool-villa', label: 'Oceanfront Pool Villa', icon: 'fas fa-swimmer' },
-                { value: 'lagoon-view-suite', label: 'Lagoon View Suite', icon: 'fas fa-water' },
-                { value: 'heritage-garden-cottage', label: 'Heritage Garden Cottage', icon: 'fas fa-leaf' }
+                { value: 'Periyar', label: 'Periyar', icon: 'fas fa-swimmer' },
+                { value: 'Kettuvallom (House Boat)', label: 'Kettuvallom (House Boat)', icon: 'fas fa-water' },
+                { value: 'Marina (CONTEMPORARY ROOMS: SEA FACING)', label: 'Marina (CONTEMPORARY ROOMS: SEA FACING)', icon: 'fas fa-leaf' }
             ],
             'kuzhupilly': [
                 { value: 'Heritage Room', label: 'Heritage Room', icon: 'fas fa-seedling' },
@@ -456,9 +459,8 @@
         });
 
         document.getElementById('bookingForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-
             if (!isEmailVerified) {
+                e.preventDefault();
                 alert('Please verify your email address to proceed with the booking.');
                 return;
             }
@@ -467,12 +469,12 @@
             const selectedRoom = document.querySelector('input[name="room_type"]:checked')?.value;
 
             if (!selectedResort || !selectedRoom) {
+                e.preventDefault();
                 alert('Please select a resort and a room type.');
                 return;
             }
 
-            alert('Thank you for choosing Azure Bay Resorts! Your reservation request for ' + selectedResort + ' (' + selectedRoom + ') has been received. Our team will contact you shortly.');
-            window.location.href = 'index.html';
+            // Let the form submit normally using HTML POST action. 
         });
     </script>
 </body>
