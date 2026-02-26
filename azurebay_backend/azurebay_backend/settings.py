@@ -28,7 +28,11 @@ SECRET_KEY = 'django-insecure-...'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "azurebay-backend-94b8.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
