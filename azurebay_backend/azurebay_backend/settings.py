@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-...'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "azurebay_backend-94b8.onrender.com",
+    "azurebay-backend-94b8.onrender.com",
     "localhost",
     "127.0.0.1",
 ]
