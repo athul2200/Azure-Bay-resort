@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Azure Bay Resorts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header id="header" class="sticky">
+        <div class="container navbar">
+            <a href="/" class="logo">Azure <span>Bay</span></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html" class="active">About</a></li>
+                <li class="dropdown">
+                    <a href="/resorts.html">RESORTS <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                    </ul>
+                </li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary"
+                        style="color: white; border: none; padding: 12px 25px;">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero"
+        style="background-image: linear-gradient(var(--color-overlay), var(--color-overlay)), url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/f1/87/48/sunset-view-at-unique.jpg?w=900&h=500&s=1'); height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-size: cover; background-position: center;">
+    </section>
+
+    <!-- Description Text Section -->
+    <section class="section-padding" style="padding-top: 50px;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <article>
+                    <h2 class="section-title" style="display: block; text-transform: uppercase;">Azure Group — Expanding
+                        Horizons</h2>
+                    <p
+                        style="display: block; font-size: 16px; line-height: 1.8; color: var(--color-text-light); margin-bottom: 30px;">
+                        Azure Bay Resorts is a premium hospitality brand rooted in the soul of Kerala, offering
+                        immersive luxury stays across the state's most breathtaking destinations — Munnar, Wayanad,
+                        Cherai, and Kuzhupilly.
+                    </p>
+                    <p
+                        style="display: block; font-size: 16px; line-height: 1.8; color: var(--color-text-light); margin-bottom: 30px;">
+                        Each Azure Bay property is thoughtfully crafted to bring guests into harmony with their natural
+                        surroundings — from mist-covered tea estates and ancient rainforests to golden beachfronts and
+                        serene backwaters.
+                    </p>
+                    <p
+                        style="display: block; font-size: 16px; line-height: 1.8; color: var(--color-text-light); margin-bottom: 30px;">
+                        We go beyond hospitality. Our curated experiences, personalized service, and attention to every
+                        detail ensure that every guest leaves with memories that last a lifetime. Whether it's an
+                        adventurous escape or a quiet retreat, Azure Bay is your sanctuary.
+                    </p>
+                    <p style="display: block; font-size: 16px; line-height: 1.8; color: var(--color-text-light);">
+                        With a vision to grow across Kerala's most iconic landscapes, Azure Bay Resorts remains
+                        committed to delivering world-class comfort, genuine warmth, and an unbreakable connection to
+                        the land we call home.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Resort Showcase Slider -->
+    <section class="resort-showcase section-padding" style="padding-bottom: 0; background: var(--color-primary);">
+        <div class="container" style="margin-bottom: 50px; margin-top: -68px; text-align: center;">
+            <h2 class="section-title" style="color: var(--color-white); display: inline-block; text-align: center; ">Our
+                Resorts
+                <style>
+                    .resort-showcase .section-title::after {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                </style>
+            </h2>
+        </div>
+        <div class="resort-slider-wrapper">
+            <div class="resort-slider" id="resortSlider">
+                <a href="/munnar.html" class="resort-slide active"
+                    style="background-image: url('https://indriyaresorts.com/images/birds-vally-landing.jpg');">
+                    <div class="resort-slide-overlay"></div>
+                    <div class="resort-slide-content">
+                        <p class="resort-slide-label">Munnar, Kerala</p>
+                        <h3 class="resort-slide-title">Azure Birds Valley</h3>
+                        <span class="resort-slide-cta">Explore Resort <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="/wayanad.html" class="resort-slide"
+                    style="background-image: url('https://res.cloudinary.com/voyehomes/image/upload/w_1280,f_auto,c_scale/v1686746723/property/69/image/e5e61711-053a-4be5-a608-45daa53d40d6.jpg');">
+                    <div class="resort-slide-overlay"></div>
+                    <div class="resort-slide-content">
+                        <p class="resort-slide-label">Wayanad, Kerala</p>
+                        <h3 class="resort-slide-title">Hotel Azure</h3>
+                        <span class="resort-slide-cta">Explore Resort <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="/cherai.html" class="resort-slide"
+                    style="background-image: url('https://indriyaresorts.com/images/beach-landing.jpg');">
+                    <div class="resort-slide-overlay"></div>
+                    <div class="resort-slide-content">
+                        <p class="resort-slide-label">Cherai, Kerala</p>
+                        <h3 class="resort-slide-title">Azure Beach Resort</h3>
+                        <span class="resort-slide-cta">Explore Resort <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="/kuzhupilly.html" class="resort-slide"
+                    style="background-image: url('https://framerusercontent.com/images/4rsRoXsHTOmI8Jd5LBPlkhrsfXI.webp?width=1080&height=1080');">
+                    <div class="resort-slide-overlay"></div>
+                    <div class="resort-slide-content">
+                        <p class="resort-slide-label">Kuzhupilly, Kerala</p>
+                        <h3 class="resort-slide-title">Azure Bay</h3>
+                        <span class="resort-slide-cta">Explore Resort <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+            <!-- Dots -->
+            <div class="resort-slider-dots" id="resortDots">
+                <button class="resort-dot active" data-index="0"></button>
+                <button class="resort-dot" data-index="1"></button>
+                <button class="resort-dot" data-index="2"></button>
+                <button class="resort-dot" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Azure Birds Valley</h4>
+                    <div class="footer-resort-links">
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Hotel Azure</h4>
+                    <div class="footer-resort-links">
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Azure beach resort</h4>
+                    <div class="footer-resort-links">
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Azure Bay Kuzhupilly</h4>
+                    <div class="footer-resort-links">
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresorts.com</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

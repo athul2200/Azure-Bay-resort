@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities at Azure Bay Kuzhupilly | Azure Bay Resorts</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        .activity-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1540206276207-3af25c08abbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .activities-detail-section {
+            padding: 100px 0;
+            background: #fdfdfd;
+        }
+
+        .activity-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .activity-detail-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .activity-detail-card:nth-child(even) .activity-detail-content {
+            direction: ltr;
+        }
+
+        .activity-detail-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .activity-detail-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .activity-detail-content p {
+            line-height: 1.8;
+            color: var(--color-text-light);
+            margin-bottom: 25px;
+        }
+
+        .back-nav {
+            padding: 20px 0;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: var(--header-height);
+            z-index: 900;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-primary);
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 968px) {
+            .activity-detail-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .activity-detail-card:nth-child(even) {
+                direction: ltr;
+            }
+
+            .activity-detail-image img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky">
+        <div class="container navbar">
+            <a href="/" class="logo">Azure <span>Bay</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/resorts.html" class="active">RESORTS <i class="fas fa-chevron-down"
+                            style="font-size: 0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/munnar.html">Azure Birds Valley, Munnar</a></li>
+                        <li><a href="/wayanad.html">Hotel Azure, Wayanad</a></li>
+                        <li><a href="/cherai.html">Azure beach resort, Cherai</a></li>
+                        <li><a href="/kuzhupilly.html">Azure Bay, Kuzhupilly</a></li>
+                    </ul>
+                </li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/booking/" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Activity Hero -->
+    <section class="activity-hero">
+        <div class="container">
+            <h1 class="animate-on-scroll appear">Peaceful Escapes at Kuzhupilly</h1>
+            <p class="animate-on-scroll appear" style="font-size: 1.2rem; margin-top: 20px;">Reconnect with yourself in
+                the serene lap of nature and conservation.</p>
+        </div>
+    </section>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="container">
+            <a href="/kuzhupilly.html#activities" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Kuzhupilly Resort
+            </a>
+        </div>
+    </nav>
+
+    <!-- Activities Detail -->
+    <section class="activities-detail-section">
+        <div class="container">
+            <!-- Activity 1 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Yoga & Meditation">
+                </div>
+                <div class="activity-detail-content">
+                    <article>
+                        <i class="fas fa-pray"
+                            style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                        <h3>Zen Yoga & Meditation</h3>
+                        <p>Begin your day with inner peace. Our sunrise yoga and meditation sessions take place on our
+                            dedicated wooden deck, surrounded by lush flora and the gentle sounds of the sea. Led by
+                            experienced practitioners, these sessions are designed to harmonize your body and spirit.
+                            Whether you're a beginner or an experienced yogi, the serenity of Kuzhupilly provides the
+                            perfect environment for practice.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                            <li>Timings: Daily at 6:30 AM</li>
+                            <li>Location: Outdoor Zen Deck</li>
+                            <li>Inclusions: Yoga mats & Herbal tea</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1593787484402-da78a742ee5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Beach Volleyball">
+                </div>
+                <div class="activity-detail-content">
+                    <article>
+                        <i class="fas fa-volleyball-ball"
+                            style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                        <h3>Casual Beach Volleyball</h3>
+                        <p>For those who enjoy active recreation, our dedicated sand court awaits. Engage in friendly
+                            matches with other guests or organize family tournaments in the soft golden sands. It's a
+                            great
+                            way to stay active, meet fellow travelers, and enjoy the refreshing sea breeze. We provide
+                            professional-grade equipment and can help organize matches on request.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                            <li>Availability: Open all day</li>
+                            <li>Equipment: Provided by resort</li>
+                            <li>Setup: Regulation-size sand court</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Turtle Conservation">
+                </div>
+                <div class="activity-detail-content">
+                    <article>
+                        <i class="fas fa-turtle"
+                            style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                        <h3>Marine Turtle Conservation</h3>
+                        <p>Become part of a vital ecosystem effort. Kuzhupilly is a seasonal nesting ground for local
+                            sea
+                            turtles. We collaborate with local conservationists to protect these nesting sites. Guests
+                            can
+                            participate in educational sessions and, during the season, witness the magical release of
+                            hatchlings into the sea. It's a humbling and educational experience for all ages.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                            <li>Focus: Education & Protection</li>
+                            <li>Seasonality: Generally November to March</li>
+                            <li>Inclusions: Expert-led briefing</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Activity 4 -->
+            <div class="activity-detail-card animate-on-scroll appear">
+                <div class="activity-detail-image">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Star Gazing">
+                </div>
+                <div class="activity-detail-content">
+                    <article>
+                        <i class="fas fa-star"
+                            style="font-size: 2rem; color: var(--color-accent); margin-bottom: 20px;"></i>
+                        <h3>Celestial Star Gazing</h3>
+                        <p>Experience the cosmos from one of the darkest beachfronts in the region. Without the light
+                            pollution of the city, the night sky at Kuzhupilly is breathtaking. We provide high-powered
+                            telescopes and guided constellations tours. Learn about astronomical phenomena and
+                            traditional
+                            maritime navigation techniques used by Kerala's sailors for centuries.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-light);">
+                            <li>Availability: Clear nights only</li>
+                            <li>Equipment: High-powered telescope</li>
+                            <li>Inclusions: Guided celestial tour</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Azure Birds Valley</h4>
+                    <div class="footer-resort-links">
+                        <a href="/munnar.html#accommodation">Accommodation</a>
+                        <a href="/munnar.html#dining">Dining</a>
+                        <a href="/munnar.html#banquets">Banquets</a>
+                        <a href="/munnar.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Hotel Azure</h4>
+                    <div class="footer-resort-links">
+                        <a href="/wayanad.html#accommodation">Accommodation</a>
+                        <a href="/wayanad.html#dining">Dining</a>
+                        <a href="/wayanad.html#banquets">Banquets</a>
+                        <a href="/wayanad.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Azure beach resort</h4>
+                    <div class="footer-resort-links">
+                        <a href="/cherai.html#accommodation">Accommodation</a>
+                        <a href="/cherai.html#dining">Dining</a>
+                        <a href="/cherai.html#banquets">Banquets</a>
+                        <a href="/cherai.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Azure Bay Kuzhupilly</h4>
+                    <div class="footer-resort-links">
+                        <a href="/kuzhupilly.html#accommodation">Accommodation</a>
+                        <a href="/kuzhupilly.html#dining">Dining</a>
+                        <a href="/kuzhupilly.html#banquets">Banquets</a>
+                        <a href="/kuzhupilly.html#facilities">Facilities</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 XXXXX XXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@azurebayresorts.com</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/azure.bay/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Azure Bay Resorts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
