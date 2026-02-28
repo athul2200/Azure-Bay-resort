@@ -134,7 +134,8 @@
                     </article>
                 </div>
 
-                <form id="bookingForm" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                <form id="bookingForm" action="https://azurebay-backend-94b8.onrender.com/reserve/" method="POST"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
                     {% csrf_token %}
                     <div style="grid-column: span 2;">
                         <label
