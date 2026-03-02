@@ -13,7 +13,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABVlBMVEX///
         8AAAD/4Vn/n2eb5p3onYBv16P/0UL/kFz/lF//51uPUTP/pGpnQCn/1Ef0yD8aFQf/mWIfGwvy1VRwcHCAcS3/
         6Fzo6Oif7KHSi3T19fVVflaNfDFFPRgdHR3SuUksJxBZWVlcPTPvooTozVEkJCTFxcW5ubnc3NyWlpaZhzWLi4
@@ -308,7 +308,8 @@
         </div>
     </footer>
 
-    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
     document.getElementById("bookingForm").addEventListener("submit", function (e) {
     e.preventDefault();
 

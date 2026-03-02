@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .forms import ReservationForm
 
+
 def index_view(request):
     return render(request, 'index.html')
 

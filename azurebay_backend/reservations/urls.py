@@ -8,4 +8,5 @@ urlpatterns = [
     path('booking/', views.booking_view, name='booking'),
     path('reserve/', views.create_reservation, name='create_reservation'),
     path('<str:page_name>', views.page_view, name='page_view'),
+    
 ]
