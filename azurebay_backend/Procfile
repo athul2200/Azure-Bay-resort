@@ -1,0 +1,1 @@
+web: gunicorn azurebay_backend.wsgi
