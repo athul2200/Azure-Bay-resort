@@ -135,16 +135,16 @@
                 </div>
                 <div id="successPopup" style="display:none; position:fixed; top:0; left:0; 
 width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
-    
-    <div style="background:white; padding:25px; border-radius:10px;
+
+                    <div style="background:white; padding:25px; border-radius:10px;
     width:320px; text-align:center; margin:15% auto;">
-        
-        <h2>Reservation Confirmed ✅</h2>
-        <p>Your reservation has been saved successfully.</p>
-        <button onclick="closePopup()">OK</button>
-        
-    </div>
-</div>
+
+                        <h2>Reservation Confirmed ✅</h2>
+                        <p>Your reservation has been saved successfully.</p>
+                        <button onclick="closePopup()">OK</button>
+
+                    </div>
+                </div>
 
                 <form id="bookingForm" action="{% url 'create_reservation' %}" method="POST"
                     style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
@@ -488,35 +488,63 @@ width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
 
             // Let the form submit normally using HTML POST action. 
         });
-        
+
     </script>
     <script>
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-    e.preventDefault();
+        document.getElementById("bookingForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    const formData = new FormData(this);
+            const formData = new FormData(this);
 
-    fetch("{% url 'create_reservation' %}", {
-        method: "POST",
-        body: formData,
-        headers: {
-            "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.success){
-            alert("Reservation Success ✅\nYour Reservation Stored.");
-            document.getElementById("bookingForm").reset();
-        } else {
-            alert("Error saving reservation");
-        }
-    })
-    .catch(error => {
-        alert("Server error");
-    });
-});
-</script>
+            fetch("{% url 'create_reservation' %}", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Send Confirmation Email
+                        const templateParams = {
+                            to_email: formData.get('email'), // Required for EmailJS recipient
+                            name: formData.get('name'),      // Matches {{name}}
+                            room: `${formData.get('resort')} - ${formData.get('room_type')}`, // Matches {{room}}
+                            check_in: formData.get('check_in'),   // Matches {{check_in}}
+                            check_out: formData.get('check_out')  // Matches {{check_out}}
+                        };
+
+                        emailjs.send('service_y1o0o4c', 'template_b35l96p', templateParams)
+                            .then(function (response) {
+                                console.log('Confirmation Email Sent!', response.status, response.text);
+                            }, function (error) {
+                                console.log('Confirmation Email Failed...', error);
+                            });
+
+                        alert("Reservation Success ✅\nYour Reservation Stored.");
+                        document.getElementById("bookingForm").reset();
+                    } else {
+                        let errorMessage = "Error saving reservation:\n";
+                        if (data.errors) {
+                            if (typeof data.errors === 'string') {
+                                errorMessage += data.errors;
+                            } else if (data.errors.__all__) {
+                                errorMessage += data.errors.__all__.join('\n');
+                            } else {
+                                for (let key in data.errors) {
+                                    errorMessage += `${key}: ${data.errors[key].join(', ')}\n`;
+                                }
+                            }
+                        }
+                        alert(errorMessage);
+                    }
+                })
+                .catch(error => {
+                    alert("Server error");
+                });
+        });
+    </script>
 </body>
 
 </html>
